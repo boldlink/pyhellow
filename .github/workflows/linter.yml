@@ -38,18 +38,29 @@ jobs:
       ##########################
       - name: Checkout Code
         uses: actions/checkout@v2
-      - name: Install missing python packages
-          run: sudo apt-get install -y --no-install-recommends python3-venv python3-setuptools
+      # USE ONLY ONE THE 2 STEPS BELOW
+      ## Dependencies with pip + requirements.txt
       - name: Install dependencies with pip + requirements.txt
-          run: |
-            python3 -m venv .venv
-            .venv/bin/pip install -r requirements.txt
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+      ## Dependencies with pipenv
+      - name: Install dependencies with pipenv
+        run: |
+          python3 -m pip install pipenv
+          python3 -m pipenv sync --python 3.6
+        env:
+          PIPENV_VENV_IN_PROJECT: 1
+      # Now we move the dependencies where super-linter can see them
+      - name: Move the dependencies
+        run: mv .venv /home/runner/work/_temp/_github_workflow
       ################################
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
         uses: docker://github/super-linter:v2.1.0
         env:
+          PIPENV_VENV_IN_PROJECT: 1
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
           VALIDATE_YAML: false
