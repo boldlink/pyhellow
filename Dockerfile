@@ -29,5 +29,3 @@ USER app
 COPY src/main.py app.py
 
 ENTRYPOINT ["/usr/bin/python3", "app.py"]
-
-EXPOSE ${APP_PORT}
