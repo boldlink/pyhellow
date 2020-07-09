@@ -1,5 +1,6 @@
 kind: pipeline
 name: Python RestAPI - Hello World
+type: kubernetes
 
 steps:
   - name: docker
