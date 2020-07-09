@@ -1,0 +1,18 @@
+kind: pipeline
+name: Python RestAPI - Hello World
+type: kubernetes
+
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo: boldlink/pyhellow
+      tags:
+        - '0.0.1'
+      when:
+        branch:
+          - master
