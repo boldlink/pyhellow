@@ -12,3 +12,6 @@ steps:
       repo: boldlink/pyhellow
       tags:
         - '0.0.1'
+      when:
+        branch:
+          - master
