@@ -1,5 +1,5 @@
 kind: pipeline
-name: default
+name: Python RestAPI - Hello World
 
 steps:
   - name: docker
