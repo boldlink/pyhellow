@@ -1,24 +1,28 @@
-from flask import Flask, jsonify, request
+from datetime import datetime
+from flask import Flask, jsonify
 from flask_restful import Resource, Api
 import os
+import pytz
 
 app = Flask(__name__)
 api = Api(app)
 
-items = []
-
 class default(Resource):
     def get(self):
-    # TODO: Add a get with container info index.html
-    # return render_template('index.html')
-        return jsonify({'message': 'Hello World'})
-    #     return "Hello World", 200
+        localTime = pytz.timezone("GMT")
+        time = datetime.now().replace(microsecond=0).replace(tzinfo=pytz.utc)
+        time = time.astimezone(localTime)
+
+        jsonResponse = {
+            'greeting': 'Hello World',
+            'now': time
+        }
+        return jsonify(jsonResponse)
 
 class health(Resource):
     def get(self):
-    # TODO: add the health endpoint
-        return "Healthy", 200
 
+        return "Healthy", 200
 
 # Env Variables
 if "APP_PORT" in os.environ:
