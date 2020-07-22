@@ -1,6 +1,6 @@
 apiVersion: v2
 name: pyHellow-api
-description: A Helm chart for Kubernetes
+description: Deploy Python Hello World API (for demo purposes only)
 
 # A chart can be either an 'application' or a 'library' chart.
 #
