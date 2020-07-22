@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "pyHellow-api.fullname" . }}-test-connection"
+  name: "{{ include "pyhellow-api.fullname" . }}-test-connection"
   labels:
-    {{- include "pyHellow-api.labels" . | nindent 4 }}
+    {{- include "pyhellow-api.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test-success
 spec:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "pyHellow-api.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "pyhellow-api.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never

@@ -1,6 +1,6 @@
 apiVersion: v2
-name: pyHellow-api
-description: Deploy Python Hello World API (for demo purposes only)
+name: pyhellow-api
+description: Python API Hello World API (For demo only)
 
 # A chart can be either an 'application' or a 'library' chart.
 #
