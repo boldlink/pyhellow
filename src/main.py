@@ -7,16 +7,25 @@ import pytz
 app = Flask(__name__)
 api = Api(app)
 
-class default(Resource):
+class default(Resource,):
     def get(self):
         localTime = pytz.timezone("GMT")
         time = datetime.now().replace(microsecond=0).replace(tzinfo=pytz.utc)
         time = time.astimezone(localTime)
 
-        jsonResponse = {
-            'greeting': 'Hello World',
-            'now': time
-        }
+
+        if "HOSTNAME" in os.environ:
+            hostname = os.environ['HOSTNAME']
+            jsonResponse = {
+                'aws_hostname': hostname,
+                'greeting': 'Hello World',
+                'now': time
+            }
+        else:
+            jsonResponse = {
+                'greeting': 'Hello World',
+                'now': time
+            }
         return jsonify(jsonResponse)
 
 class health(Resource):
@@ -39,7 +48,6 @@ if "APP_DEBUG" in os.environ:
     debug = os.environ['APP_DEBUG']
 else:
     debug = True
-
 
 api.add_resource(default, '/v1/api')
 api.add_resource(health, '/healthz')

@@ -8,7 +8,6 @@ ENV APP_HOST=${APP_HOST:-0.0.0.0}
 ENV APP_PORT=${APP_PORT:-8000}
 ENV APP_DEBUG=${APP_DEBUG:-True}
 
-
 RUN apk update \
     && apk upgrade --no-cache
 
