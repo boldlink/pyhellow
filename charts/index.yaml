@@ -2,13 +2,12 @@ apiVersion: v1
 entries:
   pyhellow-api:
   - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2020-07-23T20:57:29.641467+01:00"
+    created: "2020-07-23T22:06:49.04814+01:00"
     description: Python Rest API Hello World (for demo purposes only)
-    digest: af17bc05d340b801a3ab734c93ed8fef106a8b9b0dccfb7a5381a843fb774050
+    digest: fea9b908b93aa43f25785843005c012a79d69c182aedfcd0fbfa6b7b01f5e119
     name: pyhellow-api
     type: application
     urls:
     - https://boldlink.github.io/pyhellow/charts/pyhellow-api-0.0.2.tgz
     version: 0.0.2
-generated: "2020-07-23T20:57:29.63951+01:00"
+generated: "2020-07-23T22:06:49.047157+01:00"
