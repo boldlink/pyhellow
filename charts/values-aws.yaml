@@ -1,5 +1,5 @@
-# Minikube ready chart values
-replicaCount: 1
+# pyhellow-api rest api deployment for AWS EKS cluster
+replicaCount: 3
 
 image:
   repository: boldlink/pyhellow:0.0.2
@@ -21,12 +21,15 @@ podSecurityContext: {}
 securityContext: {}
 
 service:
-  type: NodePort
-  port: 8080
+  type: LoadBalancer
+  port: 80
 
 ingress:
   enabled: false
   annotations: {}
+
+
+
   hosts:
     - host: pyhellow-api.local
       paths: []
@@ -35,10 +38,11 @@ ingress:
 resources: {}
 
 autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 30
   targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
 
