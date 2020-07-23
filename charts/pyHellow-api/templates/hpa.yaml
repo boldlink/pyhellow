@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "pyHellow-api.fullname" . }}
+  name: {{ include "pyhellow-api.fullname" . }}
   labels:
-    {{- include "pyHellow-api.labels" . | nindent 4 }}
+    {{- include "pyhellow-api.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "pyHellow-api.fullname" . }}
+    name: {{ include "pyhellow-api.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

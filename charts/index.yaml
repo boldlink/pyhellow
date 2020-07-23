@@ -1,14 +1,14 @@
 apiVersion: v1
 entries:
-  pyHellow-api:
+  pyhellow-api:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-07-22T18:56:25.25362+01:00"
-    description: A Helm chart for Kubernetes
-    digest: b1956753e06f728212b5693aee58aae219cb9976d71611bb13a0b7c80f00885e
-    name: pyHellow-api
+    created: "2020-07-23T20:08:12.227629+01:00"
+    description: Python Rest API Hello World (for demo purposes only)
+    digest: f8a21510a99cafae6566ad61738b07ff03f6cb8a8fb9636cfb0da516e6605f12
+    name: pyhellow-api
     type: application
     urls:
-    - https://boldlink.github.io/pyHelloW/charts/pyHellow-api-0.0.2.tgz
+    - https://boldlink.github.io/pyHelloW/charts/pyhellow-api-0.0.2.tgz
     version: 0.0.2
-generated: "2020-07-22T18:56:25.250653+01:00"
+generated: "2020-07-23T20:08:12.219469+01:00"
