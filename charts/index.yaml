@@ -9,6 +9,6 @@ entries:
     name: pyhellow-api
     type: application
     urls:
-    - https://boldlink.github.io/pyHelloW/charts/pyhellow-api-0.0.2.tgz
+    - https://boldlink.github.io/pyhellow/charts/pyhellow-api-0.0.2.tgz
     version: 0.0.2
 generated: "2020-07-23T20:08:12.219469+01:00"
