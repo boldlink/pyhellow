@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "pyHellow-api.name" -}}
+{{- define "pyhellow-api.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -11,7 +11,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "pyHellow-api.fullname" -}}
+{{- define "pyhellow-api.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -27,16 +27,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "pyHellow-api.chart" -}}
+{{- define "pyhellow-api.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "pyHellow-api.labels" -}}
-helm.sh/chart: {{ include "pyHellow-api.chart" . }}
-{{ include "pyHellow-api.selectorLabels" . }}
+{{- define "pyhellow-api.labels" -}}
+helm.sh/chart: {{ include "pyhellow-api.chart" . }}
+{{ include "pyhellow-api.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -46,17 +46,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "pyHellow-api.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "pyHellow-api.name" . }}
+{{- define "pyhellow-api.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "pyhellow-api.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "pyHellow-api.serviceAccountName" -}}
+{{- define "pyhellow-api.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "pyHellow-api.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "pyhellow-api.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
