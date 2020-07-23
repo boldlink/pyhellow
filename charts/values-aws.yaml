@@ -23,13 +23,14 @@ securityContext: {}
 service:
   type: LoadBalancer
   port: 80
+  annotations: {
+    external-dns.alpha.kubernetes.io/hostname: pyhellowapi.tools.boldlink.io,
+    external-dns.alpha.kubernetes.io/ttl: 300
+  }
 
 ingress:
   enabled: false
   annotations: {}
-
-
-
   hosts:
     - host: pyhellow-api.local
       paths: []
@@ -43,6 +44,12 @@ autoscaling:
   maxReplicas: 30
   targetCPUUtilizationPercentage: 80
   targetMemoryUtilizationPercentage: 80
+
+env:
+  APP_PORT: 8000
+  APP_HOST: "0.0.0.0"
+  APP_DEBUG: false
+  APP_AWS: true
 
 nodeSelector: {}
 
