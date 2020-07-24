@@ -3,7 +3,17 @@ entries:
   pyhellow-api:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-07-24T00:56:01.193413+01:00"
+    created: "2020-07-24T08:03:05.964914+01:00"
+    description: Python Rest API Hello World (for demo purposes only)
+    digest: e2ea432a1d74347d56323fcea9eee6517632ebb33a63334450a71f5b72384354
+    name: pyhellow-api
+    type: application
+    urls:
+    - https://boldlink.github.io/pyhellow/charts/pyhellow-api-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-07-24T08:03:05.964265+01:00"
     description: Python Rest API Hello World (for demo purposes only)
     digest: 129c844817cd7d31499bf3519e3acbee806622a1159ecc12162b8a7beb1fef5a
     name: pyhellow-api
@@ -12,7 +22,7 @@ entries:
     - https://boldlink.github.io/pyhellow/charts/pyhellow-api-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
-    created: "2020-07-24T00:56:01.192743+01:00"
+    created: "2020-07-24T08:03:05.963281+01:00"
     description: Python Rest API Hello World (for demo purposes only)
     digest: fea9b908b93aa43f25785843005c012a79d69c182aedfcd0fbfa6b7b01f5e119
     name: pyhellow-api
@@ -20,4 +30,4 @@ entries:
     urls:
     - https://boldlink.github.io/pyhellow/charts/pyhellow-api-0.0.2.tgz
     version: 0.0.2
-generated: "2020-07-24T00:56:01.188099+01:00"
+generated: "2020-07-24T08:03:05.958769+01:00"

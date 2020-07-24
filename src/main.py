@@ -17,7 +17,7 @@ class default(Resource,):
         if "HOSTNAME" in os.environ:
             hostname = os.environ['HOSTNAME']
             jsonResponse = {
-                'aws_hostname': hostname,
+                'hostname': hostname,
                 'greeting': 'Hello World',
                 'now': time
             }
