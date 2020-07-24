@@ -51,7 +51,7 @@ Install the app
 ```
 $ kubectl --context minikube create ns pyhellow
 
-$ helm install pyhellow-api pyhellow/pyhellow-api --kube-context=minikube -n pyhellow
+$ helm install pyhellow-api pyhellow/pyhellow-api -f charts/values-mini.yaml --kube-context=minikube -n pyhellow
 ```
 Navigate service
 ```
@@ -61,7 +61,7 @@ $ curl http://http://192.168.99.100:31252/v1/api
 ```
 Upgrade the app
 ```
-$ helm upgrade pyhellow-api pyhellow/pyhellow-api --kube-context=minikube -n pyhellow
+$ helm upgrade pyhellow-api pyhellow/pyhellow-api -f charts/values-mini.yaml --kube-context=minikube -n pyhellow
 ```
 ### Run on EKS
 Add helm repo
@@ -76,7 +76,7 @@ $ aws eks update-kubeconfig --name CLUSTER_NAME
 Install the app
 ```
 $ kubectl create ns pyhellow
-$ helm install pyhellow-api pyhellow/pyhellow-api -n pyhellow
+$ helm install pyhellow-api pyhellow/pyhellow-api -f charts/values-aws.yaml -n pyhellow
 ```
 Navigate to the service
 ```
@@ -87,7 +87,7 @@ $ curl http://http://xxxxxxxxx-xxxxxx.xx-xxxx-x.elb.amazonaws.com:31252/v1/api
 ```
 Ugrade the app
 ```
-helm upgrade pyhellow-api pyhellow/pyhellow-api -n pyhellow
+helm upgrade pyhellow-api pyhellow/pyhellow-api -f charts/values-aws.yaml -n pyhellow
 ```
 ## Drone CI pipeline
 A demo pipeline was added as well configured for our environment, it includes the following steps:
