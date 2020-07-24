@@ -91,9 +91,9 @@ helm upgrade pyhellow-api pyhellow/pyhellow-api -f charts/values-aws.yaml -n pyh
 ```
 ## Drone CI pipeline
 A demo pipeline was added as well configured for our environment, it includes the following steps:
-* [github]: Run Superlinter to validate code syntax
-* [drone]: SonarCube scanner for code analysis
-* [drone]: Scan image with Clair
-* [drone]: Build and push docker image
-* [drone]: Deploy helm chart to dev
-* [drone]: Deploy helm chart to prod
+* github: Run Superlinter to validate code syntax
+* drone: SonarCube scanner for code analysis
+* drone: Build and push docker image
+* drone: Scan image with Clair
+* drone: Deploy helm chart to dev
+* drone: Deploy helm chart to prod
