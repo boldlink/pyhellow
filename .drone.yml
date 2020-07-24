@@ -3,16 +3,7 @@ name: Python RestAPI - Hello World
 type: kubernetes
 
 steps:
-#  - name: code-analysis
-#    image: aosapps/drone-sonar-plugin
-#    settings:
-#      sonar_host:
-#        from_secret: sonar_host
-#      sonar_token:
-#        from_secret: sonar_token
-#    when:
-#      branch:
-#        - master
+
   - name: docker
     image: plugins/docker
     settings:
@@ -26,6 +17,16 @@ steps:
     when:
       branch:
         - master
+#  - name: code-analysis
+#    image: aosapps/drone-sonar-plugin
+#    settings:
+#      sonar_host:
+#        from_secret: sonar_host
+#      sonar_token:
+#        from_secret: sonar_token
+#    when:
+#      branch:
+#        - master
 #  - name: Helm deploy to AWS
 #    image: bitsbeats/drone-helm3
 #    settings:
