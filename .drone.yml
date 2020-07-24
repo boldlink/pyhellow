@@ -26,13 +26,13 @@ steps:
         branch:
           - master
   - name: Clair image scan
-      image: jmccann/drone-clair:1
-      url: https://clair.tools.boldlink.io
-      username:
-        from_secret: clair_username
-      password:
-        from_secret: clair_password
-      scan_image: boldlink/pyhellow:0.0.4 
+    image: jmccann/drone-clair:1
+    url: https://clair.tools.boldlink.io
+    username:
+      from_secret: clair_username
+    password:
+      from_secret: clair_password
+    scan_image: boldlink/pyhellow:0.0.4
   - name: Helm deploy to AWS Dev
     image: bitsbeats/drone-helm3
     settings:
