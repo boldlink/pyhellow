@@ -61,7 +61,7 @@ $ curl http://http://192.168.99.100:31252/v1/api
 ```
 Upgrade the app
 ```
-$ helm install pyhellow-api pyhellow/pyhellow-api --kube-context=minikube -n pyhellow
+$ helm upgrade pyhellow-api pyhellow/pyhellow-api --kube-context=minikube -n pyhellow
 ```
 ### Run on EKS
 Add helm repo
