@@ -2,8 +2,8 @@
 replicaCount: 3
 
 image:
-  repository: boldlink/pyhellow:0.0.2
-  pullPolicy: IfNotPresent
+  repository: boldlink/pyhellow:0.0.3
+  pullPolicy: Always
 
 imagePullSecrets: []
 nameOverride: ""
