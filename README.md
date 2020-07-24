@@ -95,3 +95,5 @@ A demo pipeline was added as well configured for our environment, it includes th
 * [drone]: SonarCube scanner for code analysis
 * [drone]: Scan image with Clair
 * [drone]: Build and push docker image
+* [drone]: Deploy helm chart to dev
+* [drone]: Deploy helm chart to prod
