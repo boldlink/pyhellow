@@ -3,20 +3,17 @@ name: Python RestAPI - Hello World
 type: kubernetes
 
 steps:
-
   - name: docker
     image: plugins/docker
     settings:
+      repo: boldlink/pyhellow
       username:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      repo: boldlink/pyhellow
-      tags:
-        - '0.0.4'
-    when:
-      branch:
-        - master
+      when:
+        branch:
+          - master
 #  - name: code-analysis
 #    image: aosapps/drone-sonar-plugin
 #    settings:
