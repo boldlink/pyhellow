@@ -3,16 +3,16 @@ name: Python RestAPI - Hello World
 type: kubernetes
 
 steps:
-  - name: code-analysis
-    image: aosapps/drone-sonar-plugin
-    settings:
-      sonar_host:
-        from_secret: sonar_host
-      sonar_token:
-        from_secret: sonar_token
-    when:
-      branch:
-        - master
+#  - name: code-analysis
+#    image: aosapps/drone-sonar-plugin
+#    settings:
+#      sonar_host:
+#        from_secret: sonar_host
+#      sonar_token:
+#        from_secret: sonar_token
+#    when:
+#      branch:
+#        - master
   - name: docker
     image: plugins/docker
     settings:
@@ -26,20 +26,20 @@ steps:
     when:
       branch:
         - master
-  - name: Helm deploy to AWS
-    image: bitsbeats/drone-helm3
-    settings:
-      kube_api_server: kube.example.com
-      kube_token: { from_secret: kube_token }
-      chart: pyhellow/pyhellow-api
-      release: 0.0.2
-      namespace: pyhellow
-      lint: true
-      timeout: 20m
-      helm_repos:
-        - pyhellow=https://boldlink.github.io/pyhellow/charts
-      envsubst: true
-      values_yaml: charts/values-aws.yaml
-    when:
-      branch:
-        - master
+#  - name: Helm deploy to AWS
+#    image: bitsbeats/drone-helm3
+#    settings:
+#      kube_api_server: kube.example.com
+#      kube_token: { from_secret: kube_token }
+#      chart: pyhellow/pyhellow-api
+#      release: 0.0.2
+#      namespace: pyhellow
+#      lint: true
+#      timeout: 20m
+#      helm_repos:
+#        - pyhellow=https://boldlink.github.io/pyhellow/charts
+#      envsubst: true
+#      values_yaml: charts/values-aws.yaml
+#    when:
+#      branch:
+#        - master
