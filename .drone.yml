@@ -37,8 +37,26 @@ steps:
     image: bitsbeats/drone-helm3
     settings:
       kube_api_server:
-        from_secret: eks_server_endpoint
-      kube_token: { from_secret: eks_server_token }
+        from_secret: eks_server_endpoint_dev
+      kube_token: { from_secret: eks_server_token_dev }
+      chart: pyhellow/pyhellow-api
+      release: 0.0.4
+      namespace: pyhellow
+      lint: true
+      timeout: 20m
+      helm_repos:
+        - pyhellow=https://boldlink.github.io/pyhellow/charts
+      envsubst: true
+      values_yaml: charts/values-aws.yaml
+    when:
+      branch:
+        - master
+  - name: Helm deploy to AWS Prod
+    image: bitsbeats/drone-helm3
+    settings:
+      kube_api_server:
+        from_secret: eks_server_endpoint_prod
+      kube_token: { from_secret: eks_server_token_prod }
       chart: pyhellow/pyhellow-api
       release: 0.0.4
       namespace: pyhellow
