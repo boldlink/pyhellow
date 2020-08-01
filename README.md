@@ -57,7 +57,7 @@ Navigate service
 ```
 $ minikube service pyhellw-api --url
 
-$ curl http://http://192.168.99.100:31252/v1/api
+$ curl http://192.168.99.100:31252/v1/api
 ```
 Upgrade the app
 ```
@@ -83,13 +83,13 @@ Navigate to the service
 $ kubectl get svc
 
 # Add /vi/api to curl
-$ curl http://http://xxxxxxxxx-xxxxxx.xx-xxxx-x.elb.amazonaws.com:31252/v1/api
+$ curl http://xxxxxxxxx-xxxxxx.xx-xxxx-x.elb.amazonaws.com:31252/v1/api
 ```
 Ugrade the app
 ```
 helm upgrade pyhellow-api pyhellow/pyhellow-api -f charts/values-aws.yaml -n pyhellow
 ```
-## Drone CI pipeline
+## CI/CD pipeline
 A demo pipeline was added as well configured for our environment, it includes the following steps:
 * github: Run Superlinter to validate code syntax
 * drone: SonarCube scanner for code analysis
