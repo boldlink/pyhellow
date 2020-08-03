@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: boldlink/pyhellow:0.0.4
+  repository: boldlink/pyhellow
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "0.0.4"
 
 imagePullSecrets: []
 nameOverride: ""
