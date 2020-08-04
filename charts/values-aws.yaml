@@ -45,11 +45,14 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   targetMemoryUtilizationPercentage: 80
 
+#extraSecretNamesForEnvFrom: [ "pyhellow-server-secrets" ]
 env:
-  APP_PORT: 8000
   APP_HOST: "0.0.0.0"
-  APP_DEBUG: false
-  APP_AWS: true
+  APP_PORT: 5000 # Ensure it matches deployment.port
+  APP_DEBUG: "False"
+
+deployment:
+  port: 5000
 
 nodeSelector: {}
 
