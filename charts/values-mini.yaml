@@ -41,7 +41,7 @@ autoscaling:
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
 
-#extraSecretNamesForEnvFrom: [ "drone-server-secrets" ]
+#extraSecretNamesForEnvFrom: [ "pyhellow-server-secrets" ]
 env:
   APP_HOST: "0.0.0.0"
   APP_PORT: 5000 # Ensure it matches deployment.port
