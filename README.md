@@ -97,3 +97,21 @@ A demo pipeline was added as well configured for our environment, it includes th
 * drone: Scan image with Clair
 * drone: Deploy helm chart to dev
 * drone: Deploy helm chart to prod
+
+## The helm repo and chart
+This github repo is also the Helm repo, bellow are the commands helm chart related (Yes still manual)
+
+##### Prepare Helm chart
+```shell script
+$ cd charts/
+$ helm lint helm-chart-sources/*
+```
+##### Package
+```shell script
+$ helm package pyhellow-api/
+```
+##### Update the repo index
+```shell script
+$ helm repo index --url https://boldlink.github.io/pyhellow/charts/ --merge index.yaml .
+```
+Commit the changes and have fun :)
