@@ -2,8 +2,9 @@
 replicaCount: 3
 
 image:
-  repository: boldlink/pyhellow:0.0.4
+  repository: boldlink/pyhellow
   pullPolicy: Always
+  tag: "0.0.4"
 
 imagePullSecrets: []
 nameOverride: ""
