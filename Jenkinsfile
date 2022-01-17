@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('demo dummy Job') {
         agent {
-          kubernetes { yamlFile "pod-cicd.yaml" }
+          kubernetes { yamlFile "pod.yaml" }
         }
       steps {
           sh '''
