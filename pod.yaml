@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-utils
+  labels:
+    name: k8s-utils
+spec:
+  containers:
+  - name: k8s-utils
+    image: boldlink/k8s-utils:0.1.0
+    command:
+    - cat
+    resources:
+      requests:
+        memory: "512Mi"
+        cpu: "256m"
+      limits:
+        memory: "512Mi" 
+        cpu: "256m"
+    tty: false
