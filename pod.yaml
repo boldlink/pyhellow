@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: k8s-utils
-    image: boldlink/k8s-utils:0.1.0
+    image: python:slim-stretch
     command:
     - cat
     resources:
