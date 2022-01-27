@@ -1,0 +1,90 @@
+on:
+  push:
+    branches: [ feature/* ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  example1:
+    runs-on: demo2
+    container:
+      image: amazon/aws-cli:latest
+      env:
+        AWS_WEB_IDENTITY_TOKEN_FILE: /var/run/secrets/eks.amazonaws.com/serviceaccount/token
+        AWS_ROLE_ARN: arn:aws:iam::959500098335:role/app1-runner-deploy-role
+      volumes:
+        - /var/run/secrets/eks.amazonaws.com/serviceaccount/token:/var/run/secrets/eks.amazonaws.com/serviceaccount/token
+    steps:
+        - run: aws sts get-caller-identity
+
+  docker1:
+    runs-on: demo2
+    container:
+      image: docker:latest
+    steps:
+      - run: docker ps -a
+      - run: docker images
+  docker2:
+    runs-on: demo2
+    container:
+      image: docker:latest
+    steps:
+      - run: docker ps -a
+      - run: docker images
+  docker3:
+    runs-on: demo2
+    container:
+      image: docker:latest
+    steps:
+      - run: docker ps -a
+      - run: docker images
+  docker4:
+    runs-on: demo2
+    container:
+      image: docker:latest
+    steps:
+      - run: docker ps -a
+      - run: docker images
+  docker5:
+    runs-on: demo2
+    container:
+      image: docker:latest
+    steps:
+      - run: docker ps -a
+      - run: docker images
+  docker6:
+    runs-on: demo2
+    container:
+      image: docker:latest
+    steps:
+      - run: docker ps -a
+      - run: docker images
+  docker7:
+    runs-on: demo2
+    container:
+      image: docker:latest
+    steps:
+      - run: docker ps -a
+      - run: docker images
+  docker8:
+    runs-on: demo2
+    container:
+      image: docker:latest
+    steps:
+      - run: docker ps -a
+      - run: docker images
+  docker9:
+    runs-on: demo2
+    container:
+      image: docker:latest
+    steps:
+      - run: docker ps -a
+      - run: docker images
+  docker10:
+    runs-on: demo2
+    container:
+      image: docker:latest
+    steps:
+      - run: docker ps -a
+      - run: docker images
